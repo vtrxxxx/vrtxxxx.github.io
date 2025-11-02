@@ -1,0 +1,36 @@
+/* Контейнер з обмеженою шириною та відступами */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Головний контент */
+.main-content {
+    padding: 40px 0;
+    min-height: calc(100vh - 120px);
+}
+
+/* Сітка статей */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Заголовок сторінки */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #0a1428;
+    margin-bottom: 15px;
+}
+
+body{
+    background-color: rgb(168, 238, 168)
+}

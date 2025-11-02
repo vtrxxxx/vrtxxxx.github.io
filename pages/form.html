@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опитування гравця - LoL Esports News</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="shortcut icon" href="../images/logo.webp">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Головна</a></li>
+                <li class="nav-item"><a href="articles.html" class="nav-link">Статті</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Галерея</a></li>
+                <li class="nav-item"><a href="form.html" class="nav-link">Опитування</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">Про нас</a></li>
+                <li class="nav-item"><a href="contacts.html" class="nav-link">Контакти</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1 class="page-title">Опитування гравця</h1>
+                <p class="page-subtitle">Поділіться своїми вподобаннями та досвідом гри</p>
+            </header>
+
+            <section class="form-section">
+                <form action="/submit" method="post" class="survey-form">
+                    <fieldset class="form-fieldset">
+                        <legend class="fieldset-legend">Особиста інформація</legend>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Пароль:</label>
+                            <input type="password" id="password" name="password" class="form-input">
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset">
+                        <legend class="fieldset-legend">Ігрові вподобання</legend>
+                        <div class="form-group">
+                            <label for="role" class="form-label">Улюблена роль:</label>
+                            <select id="role" name="role" class="form-select">
+                                <option value="top">Топ</option>
+                                <option value="jungle">Ліс</option>
+                                <option value="mid">Мід</option>
+                                <option value="adc">Фізичний кері</option>
+                                <option value="support">Підтримка</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="rank" class="form-label">Ранг:</label>
+                            <input type="text" id="rank" list="ranks" class="form-input" placeholder="Оберіть або введіть свій ранг">
+                            <datalist id="ranks">
+                                <option value="Iron">Iron</option>
+                                <option value="Bronze">Bronze</option>
+                                <option value="Silver">Silver</option>
+                                <option value="Gold">Gold</option>
+                                <option value="Platinum">Platinum</option>
+                                <option value="Emerald">Emerald</option>
+                                <option value="Diamond">Diamond</option>
+                                <option value="Master">Master</option>
+                                <option value="Grandmaster">Grandmaster</option>
+                                <option value="Challenger">Challenger</option>
+                            </datalist>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset">
+                        <legend class="fieldset-legend">Додатково</legend>
+                        <div class="form-group">
+                            <label for="comments" class="form-label">Ваші пропозиції та коментарі:</label>
+                            <textarea id="comments" name="comments" rows="4" class="form-textarea" placeholder="Розкажіть про ваш досвід гри або поділіться ідеями..."></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" class="form-checkbox">
+                                <span class="checkbox-text">Підписатися на новини та оновлення</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-submit">Надіслати відповіді</button>
+                        <button type="reset" class="btn btn-reset">Очистити форму</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 LoL Esports News. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
