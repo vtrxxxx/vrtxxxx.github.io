@@ -1,0 +1,15 @@
+﻿@model HW12.Contract.Responses.MovieResponse
+
+<h1>Подтверждение удаления фильма</h1>
+
+<div>
+    <h5>Вы уверены, что хотите удалить фильм <strong>@Model.Title</strong>?</h5>
+    <p><strong>Режиссер:</strong> @Model.Director</p>
+    <p><strong>Жанр:</strong> @Model.Genre</p>
+    <p><strong>Описание:</strong> @Model.Description</p>
+
+    <form method="post" action="@Url.Action("DeleteMovie", "Movie", new { movieId = Model.Id })">
+        <button type="submit" class="btn btn-danger">Удалить</button>
+        <a href="@Url.Action("Index", "Movie")" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>

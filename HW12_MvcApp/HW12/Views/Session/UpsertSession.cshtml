@@ -1,0 +1,44 @@
+﻿@model HW12.Contract.Requests.UpsertSessionRequest
+
+@{
+    ViewData["Title"] = Model.Id == 0 ? "Добавить сессию" : "Редактировать сессию";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="UpsertSession" method="post">
+    <input type="hidden" asp-for="MovieId" />
+
+    <div class="form-group">
+        <label asp-for="RoomName" class="control-label">Комната</label>
+        <input asp-for="RoomName" class="form-control" />
+        <span asp-validation-for="RoomName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StartDate" class="control-label">Дата начала</label>
+        <input asp-for="StartDate" type="date" class="form-control" />
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StartTime" class="control-label">Время начала</label>
+        <input asp-for="StartTime" type="time" class="form-control" value="@Model.StartTime.ToString("hh\\:mm")" />
+        <span asp-validation-for="StartTime" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EndTime" class="control-label">Время окончания</label>
+        <input asp-for="EndTime" type="time" class="form-control" value="@Model.EndTime.ToString("hh\\:mm")" />
+        <span asp-validation-for="EndTime" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" asp-controller="Movie" class="btn btn-secondary">Отмена</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,40 @@
+﻿@model HW12.Contract.Responses.MovieResponse
+
+<h1>@Model.Title</h1>
+
+<p><strong>Режиссер:</strong> @Model.Director</p>
+<p><strong>Жанр:</strong> @Model.Genre</p>
+<p><strong>Описание:</strong> @Model.Description</p>
+
+<h2>Сеансы</h2>
+
+@if (Model.Sessions != null && Model.Sessions.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Дата</th>
+                <th>Время начала</th>
+                <th>Время окончания</th>
+                <th>Зал</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var session in Model.Sessions)
+            {
+                <tr>
+                    <td>@session.StartDate.ToString("dd.MM.yyyy")</td>
+                    <td>@session.StartTime.ToString(@"hh\:mm")</td>
+                    <td>@session.EndTime.ToString(@"hh\:mm")</td>
+                    <td>@session.RoomName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Нет сеансов для данного фильма.</p>
+}
+
+<a href="@Url.Action("Index", "Movie")" class="btn btn-secondary">Назад</a>
